@@ -6,6 +6,7 @@
   "main": "src/index.tsx",
   "module": "src/index.tsx",
   "scripts": {
+    "prepare": "bun .husky/install.js",
     "dev": "bun --hot src/index.tsx",
     "start": "NODE_ENV=production bun src/index.tsx",
     "build": "bun run build.ts",
@@ -39,6 +40,8 @@
     "@types/react-dom": "19.0.4",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "3.5.2",
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-tailwindcss": "0.6.11"
