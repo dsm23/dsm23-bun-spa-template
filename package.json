@@ -11,7 +11,9 @@
     "start": "NODE_ENV=production bun src/index.tsx",
     "build": "bun run build.ts",
     "fmt": "prettier . --write",
-    "fmt.check": "prettier . --check"
+    "fmt.check": "prettier . --check",
+    "lint:css": "stylelint \"**/*.css\" --max-warnings 0 --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
+    "lint": "run-s lint:css"
   },
   "dependencies": {
     "@hookform/resolvers": "4.1.2",
@@ -42,8 +44,13 @@
     "cz-conventional-changelog": "3.3.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
+    "npm-run-all2": "7.0.2",
     "prettier": "3.5.2",
     "prettier-plugin-css-order": "2.1.2",
-    "prettier-plugin-tailwindcss": "0.6.11"
+    "prettier-plugin-tailwindcss": "0.6.11",
+    "stylelint": "16.14.1",
+    "stylelint-config-standard": "37.0.0",
+    "stylelint-order": "6.0.4",
+    "stylelint-selector-bem-pattern": "4.0.1"
   }
 }
