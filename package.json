@@ -33,11 +33,13 @@
     "zod": "3.24.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.1",
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
     "@commitlint/types": "19.5.0",
     "@ianvs/prettier-plugin-sort-imports": "4.4.1",
-    "@types/bun": "latest",
+    "@playwright/test": "1.50.1",
+    "@types/bun": "1.2.3",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "commitizen": "4.3.1",
