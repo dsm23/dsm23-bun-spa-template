@@ -7,8 +7,9 @@ pull_request_rules:
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=format
+      - check-success=gitleaks
       - check-success=zizmor
-      - "#check-success>=6"
+      - "#check-success>=7"
     actions:
       review:
         type: APPROVE
@@ -20,8 +21,9 @@ pull_request_rules:
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=format
+      - check-success=gitleaks
       - check-success=zizmor
-      - "#check-success>=6"
+      - "#check-success>=7"
     actions:
       review:
         type: APPROVE
@@ -33,8 +35,9 @@ pull_request_rules:
       - check-success~=codeql \([a-z]*\)
       - check-success=dependency-review
       - check-success=format
+      - check-success=gitleaks
       - check-success=zizmor
-      - "#check-success>=6"
+      - "#check-success>=7"
       - "#approved-reviews-by>=1"
     actions:
       merge:
