@@ -1,4 +1,5 @@
-import React, { useRef, type FormEvent } from "react";
+import React, { useRef } from "react";
+import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -32,10 +33,10 @@ export function APITester() {
   };
 
   return (
-    <div className="mt-8 mx-auto w-full max-w-2xl text-left flex flex-col gap-4">
+    <div className="mx-auto mt-8 flex w-full max-w-2xl flex-col gap-4 text-left">
       <form
         onSubmit={testEndpoint}
-        className="flex items-center gap-2 bg-card p-3 rounded-xl font-mono border border-input w-full"
+        className="bg-card border-input flex w-full items-center gap-2 rounded-xl border p-3 font-mono"
       >
         <Select name="method" defaultValue="GET">
           <SelectTrigger className="w-[100px]">
@@ -53,8 +54,8 @@ export function APITester() {
           defaultValue="/api/hello"
           className={cn(
             "flex-1 font-mono",
-            "bg-transparent border-0 shadow-none",
-            "focus-visible:ring-0 focus-visible:ring-offset-0"
+            "border-0 bg-transparent shadow-none",
+            "focus-visible:ring-0 focus-visible:ring-offset-0",
           )}
           placeholder="/api/hello"
         />
@@ -69,10 +70,10 @@ export function APITester() {
         readOnly
         placeholder="Response will appear here..."
         className={cn(
-          "w-full min-h-[140px] bg-card",
-          "border border-input rounded-xl p-3",
-          "font-mono resize-y",
-          "placeholder:text-muted-foreground"
+          "bg-card min-h-[140px] w-full",
+          "border-input rounded-xl border p-3",
+          "resize-y font-mono",
+          "placeholder:text-muted-foreground",
         )}
       />
     </div>
