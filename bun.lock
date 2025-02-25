@@ -25,7 +25,7 @@
         "@commitlint/cli": "19.7.1",
         "@commitlint/config-conventional": "19.7.1",
         "@commitlint/types": "19.5.0",
-        "@happy-dom/global-registrator": "^17.1.8",
+        "@happy-dom/global-registrator": "17.1.8",
         "@ianvs/prettier-plugin-sort-imports": "4.4.1",
         "@playwright/test": "1.50.1",
         "@testing-library/dom": "10.4.0",
