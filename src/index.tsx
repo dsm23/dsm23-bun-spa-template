@@ -7,13 +7,13 @@ const server = serve({
     "/*": index,
 
     "/api/hello": {
-      async GET(req) {
+      async GET() {
         return Response.json({
           message: "Hello, world!",
           method: "GET",
         });
       },
-      async PUT(req) {
+      async PUT() {
         return Response.json({
           message: "Hello, world!",
           method: "PUT",
@@ -32,4 +32,5 @@ const server = serve({
   development: process.env.NODE_ENV !== "production",
 });
 
+// eslint-disable-next-line no-console
 console.log(`🚀 Server running at ${server.url}`);
