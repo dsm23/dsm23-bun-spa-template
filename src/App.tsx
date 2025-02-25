@@ -4,7 +4,7 @@ import { Card, CardContent } from "~/components/ui/card";
 import logo from "./logo.svg";
 import reactLogo from "./react.svg";
 
-export function App() {
+export const App = () => {
   return (
     <main className="relative z-10 container mx-auto p-8 text-center">
       <h1 className="sr-only">Delete this</h1>
@@ -35,6 +35,6 @@ export function App() {
       </Card>
     </main>
   );
-}
+};
 
 export default App;
