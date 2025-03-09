@@ -42,7 +42,7 @@
     "@eslint/compat": "1.2.7",
     "@eslint/eslintrc": "3.3.0",
     "@eslint/js": "9.22.0",
-    "@happy-dom/global-registrator": "17.4.1",
+    "@happy-dom/global-registrator": "17.4.2",
     "@ianvs/prettier-plugin-sort-imports": "4.4.1",
     "@playwright/test": "1.51.0",
     "@testing-library/dom": "10.4.0",
