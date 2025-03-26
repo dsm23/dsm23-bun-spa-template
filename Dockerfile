@@ -25,7 +25,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the Vite project
+# Build the Bun project
 RUN bun run build
 
 # Stage 3: Production image
