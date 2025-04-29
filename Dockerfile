@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:4c68376a702446fc3c79af22de146a148bc3367e73c25a5803d453b6b3f722fb
 
 # Stage 1: Base image for dependencies and build
-FROM oven/bun:1.2.10-slim@sha256:9080dc6e249dbeca6bfe03f6a343493827a9be74442f1d5f3b6913ce95ca0ed6 AS base
+FROM oven/bun:1.2.11-slim@sha256:78e3b062d0d942550f6c30c34c4cf74d751305507e29b69915c44ddb146e63d9 AS base
 
 # Install dependencies only when needed
 FROM base AS deps
