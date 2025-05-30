@@ -5,6 +5,7 @@ pull_request_rules:
       - author=dsm23
       - check-success=amd64
       - check-success=build
+      - check-success=codeql (actions)
       - check-success=codeql (javascript)
       - check-success=codeql (typescript)
       - check-success=dependency-review
@@ -24,6 +25,7 @@ pull_request_rules:
       - author=renovate[bot]
       - check-success=amd64
       - check-success=build
+      - check-success=codeql (actions)
       - check-success=codeql (javascript)
       - check-success=codeql (typescript)
       - check-success=dependency-review
@@ -43,6 +45,7 @@ pull_request_rules:
     conditions:
       - check-success=amd64
       - check-success=build
+      - check-success=codeql (actions)
       - check-success=codeql (javascript)
       - check-success=codeql (typescript)
       - check-success=dependency-review
