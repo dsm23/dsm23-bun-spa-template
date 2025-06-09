@@ -6,7 +6,6 @@
   "main": "src/index.tsx",
   "module": "src/index.tsx",
   "scripts": {
-    "prepare": "bun .husky/install.js",
     "dev": "bun --hot src/index.tsx",
     "start": "NODE_ENV=production bun src/index.tsx",
     "build": "bun run build.ts",
@@ -60,8 +59,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
     "globals": "16.2.0",
-    "husky": "9.1.7",
-    "lint-staged": "16.1.0",
+    "lefthook": "1.11.13",
     "npm-run-all2": "8.0.4",
     "prettier": "3.5.3",
     "prettier-plugin-css-order": "2.1.2",

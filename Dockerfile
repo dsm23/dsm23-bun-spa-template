@@ -7,12 +7,10 @@ FROM oven/bun:1.2.15-slim@sha256:97fffcc50f2cb53f0287a2db04e068253bda134da2caa85
 FROM base AS deps
 WORKDIR /app
 
-ENV HUSKY=0
+ENV LEFTHOOK=0
 
 # Copy package manager lock files
 COPY package.json bun.lock ./
-# for the sake of the prepare script
-COPY .husky/ ./.husky/
 
 # Install dependencies
 RUN bun install --frozen-lockfile
