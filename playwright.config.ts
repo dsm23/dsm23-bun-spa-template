@@ -3,7 +3,8 @@ import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
 
-const PORT = process.env.PORT || 3000;
+const portDev = 3000;
+const portProd = 3001;
 
 const injectFromEnvFile = () => {
   const envDir = ".";
@@ -35,28 +36,69 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? "blob" : "html",
   use: {
-    baseURL: `http://127.0.0.1:${PORT}`,
     trace: "on-first-retry",
   },
+
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: "chromium-dev",
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: `http://localhost:${portDev}`,
+      },
     },
 
     {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      name: "firefox-dev",
+      use: {
+        ...devices["Desktop Firefox"],
+        baseURL: `http://localhost:${portDev}`,
+      },
     },
 
     {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      name: "webkit-dev",
+      use: {
+        ...devices["Desktop Safari"],
+        baseURL: `http://localhost:${portDev}`,
+      },
+    },
+
+    {
+      name: "chromium-prod",
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: `http://localhost:${portProd}`,
+      },
+    },
+
+    {
+      name: "firefox-prod",
+      use: {
+        ...devices["Desktop Firefox"],
+        baseURL: `http://localhost:${portProd}`,
+      },
+    },
+
+    {
+      name: "webkit-prod",
+      use: {
+        ...devices["Desktop Safari"],
+        baseURL: `http://localhost:${portProd}`,
+      },
     },
   ],
-  webServer: {
-    command: "npm run start",
-    url: `http://127.0.0.1:${PORT}`,
-    reuseExistingServer: !process.env.CI,
-  },
+
+  webServer: [
+    {
+      command: `bun run build && NODE_ENV=production bun --port ${portProd} src/index.tsx`,
+      url: `http://localhost:${portProd}`,
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command: `bun --hot --port ${portDev} src/index.tsx`,
+      url: `http://localhost:${portDev}`,
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
 });
