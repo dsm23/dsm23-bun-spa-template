@@ -49,7 +49,7 @@
     "@total-typescript/ts-reset": "0.6.1",
     "@types/bun": "1.2.21",
     "@types/react": "19.1.11",
-    "@types/react-dom": "19.1.7",
+    "@types/react-dom": "19.1.8",
     "dotenv": "17.2.1",
     "eslint": "9.34.0",
     "eslint-plugin-mdx": "3.6.2",
