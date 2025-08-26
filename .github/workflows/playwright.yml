@@ -27,6 +27,7 @@ jobs:
         shardTotal: [18]
     container:
       image: mcr.microsoft.com/playwright:v1.55.0@sha256:b27e719ecbfef153e13fd24e8341736733bf2658b229677eb21ff57ff5d7fb29
+      options: --user 1001
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
@@ -40,17 +41,14 @@ jobs:
 
       - name: Install unzip
         run: |
-          apt-get update
-          apt-get install unzip
+          sudo apt-get update
+          sudo apt-get install unzip
 
       - name: Bun setup
         uses: ./.github/actions/setup
 
       - name: Run Playwright tests
         run: bunx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-        env:
-          # Required for firefox
-          HOME: /root
 
       - name: Upload playwright report to GitHub Actions Artifacts
         if: ${{ !cancelled() }}
