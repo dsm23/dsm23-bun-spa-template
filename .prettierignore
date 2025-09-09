@@ -6,7 +6,7 @@ __tmp__/
 target/
 compiled/
 coverage/
-infra/
+infra/templates/**/*.yaml
 
 lerna.json
 test-timings.json
