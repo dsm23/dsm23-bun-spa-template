@@ -27,7 +27,7 @@ COPY . .
 RUN bun run build
 
 # Stage 3: Production image
-FROM nginx:1.29.2-alpine-slim@sha256:a96e1fcef85d6f8ff094582dcfd9996911d705e1682afd21668c08fac0a28fba AS runner
+FROM nginx:1.29.2-alpine-slim@sha256:d5cd890c485eab8e763a5f03d34b0f2154480338c94f9974dba5af507d116c9c AS runner
 
 # Copy built static files to nginx's default public folder
 COPY --from=builder /app/dist /usr/share/nginx/html
