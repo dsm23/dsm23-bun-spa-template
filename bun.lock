@@ -27,7 +27,7 @@
         "@eslint/compat": "1.4.0",
         "@eslint/eslintrc": "3.3.1",
         "@eslint/js": "9.37.0",
-        "@happy-dom/global-registrator": "20.0.2",
+        "@happy-dom/global-registrator": "20.0.3",
         "@ianvs/prettier-plugin-sort-imports": "4.7.0",
         "@playwright/test": "1.56.0",
         "@testing-library/dom": "10.4.1",
@@ -170,7 +170,7 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.9", "", {}, "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="],
 
-    "@happy-dom/global-registrator": ["@happy-dom/global-registrator@20.0.2", "", { "dependencies": { "@types/node": "^20.0.0", "happy-dom": "^20.0.2" } }, "sha512-DKoY/tiFGcY0FmNwtdrHNfOeU3YjrO2EOGSmRk3OlAjKLfZXRtnjiCPAfmhsOMIQEkp2KenTUDxpgZbzpd7OVQ=="],
+    "@happy-dom/global-registrator": ["@happy-dom/global-registrator@20.0.3", "", { "dependencies": { "@types/node": "^20.0.0", "happy-dom": "^20.0.3" } }, "sha512-88tMhZ3uOF2vvsZ73QxUYddsFeBxhEv3HbOsDZDs3BYBS8e7QcQrIUBZc1vyh73kIfagrLsRAkAVidNznJjaVw=="],
 
     "@hookform/resolvers": ["@hookform/resolvers@5.2.2", "", { "dependencies": { "@standard-schema/utils": "^0.3.0" }, "peerDependencies": { "react-hook-form": "^7.55.0" } }, "sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA=="],
 
@@ -680,7 +680,7 @@
 
     "graphemer": ["graphemer@1.4.0", "", {}, "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag=="],
 
-    "happy-dom": ["happy-dom@20.0.2", "", { "dependencies": { "@types/node": "^20.0.0", "@types/whatwg-mimetype": "^3.0.2", "whatwg-mimetype": "^3.0.0" } }, "sha512-pYOyu624+6HDbY+qkjILpQGnpvZOusItCk+rvF5/V+6NkcgTKnbOldpIy22tBnxoaLtlM9nXgoqAcW29/B7CIw=="],
+    "happy-dom": ["happy-dom@20.0.3", "", { "dependencies": { "@types/node": "^20.0.0", "@types/whatwg-mimetype": "^3.0.2", "whatwg-mimetype": "^3.0.0" } }, "sha512-o851fgl7k+hfqXgxvITR1851FiSoa5lxtA5dqNqJZDOUUxDkwWXhbHdFDnKrSxQpv/LmBB49ZYaeZElSMTEmQw=="],
 
     "has-bigints": ["has-bigints@1.1.0", "", {}, "sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg=="],
 
