@@ -57,6 +57,9 @@
       "matchUpdateTypes": ["digest", "patch", "minor", "major"]
     }
   ],
+  "bun": {
+    "minimumReleaseAge": "3 days"
+  },
   "rebaseWhen": "conflicted",
   "patch": {
     "rebaseWhen": "behind-base-branch"
