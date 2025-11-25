@@ -44,14 +44,13 @@
       "matchPackageNames": [
         "playwright",
         "@playwright/test",
-        "mcr.microsoft.com/playwright"
-      ],
-      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
+        "mcr.microsoft.com/playwright",
+        "gwennlbh/playwright-bun"
+      ]
     },
     {
       "groupName": "bun monorepo",
-      "matchPackageNames": ["bun", "@types/bun", "oven/bun"],
-      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
+      "matchPackageNames": ["bun", "@types/bun", "oven/bun"]
     }
   ],
   "bun": {
