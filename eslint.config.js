@@ -1,49 +1,74 @@
-import path from "node:path";
-import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
 import * as mdx from "eslint-plugin-mdx";
-import onlyWarn from "eslint-plugin-only-warn";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-const gitignorePath = path.resolve(import.meta.dirname, ".gitignore");
+/**
+ *  @type {import("eslint").Linter.LanguageOptions}
+ */
+const languageOptions = {
+  ecmaVersion: 2020,
+  globals: globals.browser,
+};
 
-export default tseslint.config(
-  includeIgnoreFile(gitignorePath),
+export default defineConfig([
+  globalIgnores([
+    "coverage/",
+    "dist/",
+    "playwright-report/",
+    "storybook-static/",
+    "test-results/",
+  ]),
   {
+    files: ["**/src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     extends: [
       js.configs.recommended,
-      ...tseslint.configs.strict,
-      ...tseslint.configs.stylistic,
-      // ...tseslint.configs.strictTypeChecked,
-      // ...tseslint.configs.stylisticTypeChecked,
-      react.configs.flat["jsx-runtime"],
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
+      reactHooks.configs.flat["recommended-latest"],
     ],
-    files: ["**/*.{js,md,mdx,mjs,ts,tsx}"],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      ...languageOptions,
       parserOptions: {
-        project: ["./tsconfig.json"],
-        tsconfigRootDir: import.meta.dirname,
+        projectService: true,
+        tsconfigDirName: import.meta.dirname,
       },
     },
-    plugins: {
-      "react-hooks": reactHooks,
-    },
     rules: {
-      ...reactHooks.configs.recommended.rules,
-    },
-  },
-  {
-    plugins: {
-      onlyWarn,
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksVoidReturn: false,
+        },
+      ],
+      "@typescript-eslint/restrict-template-expressions": [
+        "error",
+        {
+          allowNumber: true,
+          allowBoolean: true,
+        },
+      ],
     },
   },
   {
     files: ["**/*.{jsx,mdx,tsx}"],
+    extends: [
+      react.configs.flat.recommended,
+      react.configs.flat["jsx-runtime"],
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+        ...globals.browser,
+      },
+      parserOptions: {
+        projectService: true,
+        tsconfigDirName: import.meta.dirname,
+      },
+    },
     rules: {
       "react/function-component-definition": [
         "error",
@@ -53,13 +78,16 @@ export default tseslint.config(
         },
       ],
     },
+    settings: { react: { version: "detect" } },
   },
   {
-    files: ["!**/src/**", "**/src/stories/**"],
-    ...tseslint.configs.disableTypeChecked,
-  },
-  {
-    files: ["**/src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat["recommended-latest"],
+    ],
+    languageOptions,
     rules: {
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [
@@ -69,20 +97,7 @@ export default tseslint.config(
         },
       ],
       "@typescript-eslint/no-confusing-void-expression": "off",
-      "@typescript-eslint/no-misused-promises": [
-        "error",
-        {
-          checksVoidReturn: false,
-        },
-      ],
       "@typescript-eslint/non-nullable-type-assertion-style": "off",
-      "@typescript-eslint/restrict-template-expressions": [
-        "error",
-        {
-          allowNumber: true,
-          allowBoolean: true,
-        },
-      ],
       "@typescript-eslint/triple-slash-reference": [
         "error",
         {
@@ -92,7 +107,7 @@ export default tseslint.config(
       "no-console": [
         "error",
         {
-          allow: ["debug", "error", "info", "trace", "warn"],
+          allow: ["debug", "error", "info", "table", "trace", "warn"],
         },
       ],
       "no-restricted-syntax": [
@@ -110,16 +125,16 @@ export default tseslint.config(
             "Named * React import is not allowed. Please import what you need from React with Named Imports",
         },
       ],
-      "tailwindcss/no-custom-classname": "off",
     },
   },
   {
     // Configure.mdx
     files: ["**/*.mdx"],
+    extends: [react.configs.flat["jsx-runtime"]],
     rules: {
       "react/jsx-uses-vars": "error",
       "tailwindcss/no-custom-classname": "off",
     },
   },
   mdx.flat,
-);
+]);
