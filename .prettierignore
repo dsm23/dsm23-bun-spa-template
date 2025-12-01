@@ -1,13 +1,2 @@
-dist/
-node_modules
-
-__tmp__/
-
-target/
-compiled/
-coverage/
 infra/templates/**/*.yaml
-
-lerna.json
-test-timings.json
 bun.lock
