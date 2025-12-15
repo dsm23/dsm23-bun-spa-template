@@ -30,8 +30,11 @@ injectFromEnvFile();
  */
 export default defineConfig({
   ...config,
-
-  /* Run your local build server before starting the tests */
+  use: {
+    ...config.use,
+    baseURL: `http://localhost:${PORT}`,
+  },
+  tag: "@prod",
   webServer: [
     {
       command: `bun run build && NODE_ENV=production bun --port ${PORT} src/index.tsx`,
