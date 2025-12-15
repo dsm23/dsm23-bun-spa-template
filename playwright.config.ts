@@ -36,7 +36,6 @@ export default defineConfig({
   reporter: process.env.CI ? "blob" : "html",
   use: {
     baseURL: `http://localhost:${PORT}`,
-
     trace: "on-first-retry",
   },
   projects: [
@@ -55,7 +54,7 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
   ],
-
+  tag: "@dev",
   webServer: {
     command: `bun --port ${PORT} src/index.tsx`,
     url: `http://localhost:${PORT}`,
