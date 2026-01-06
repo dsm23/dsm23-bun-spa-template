@@ -1,18 +1,13 @@
 import js from "@eslint/js";
+import prettier from "eslint-config-prettier";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
+import reactDom from "eslint-plugin-react-dom";
 import reactHooks from "eslint-plugin-react-hooks";
+import tailwindCanonicalClasses from "eslint-plugin-tailwind-canonical-classes";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-
-/**
- *  @type {import("eslint").Linter.LanguageOptions}
- */
-const languageOptions = {
-  ecmaVersion: 2020,
-  globals: globals.browser,
-};
 
 export default defineConfig([
   globalIgnores([
@@ -22,16 +17,32 @@ export default defineConfig([
     "storybook-static/",
     "test-results/",
   ]),
+  prettier,
+  js.configs.recommended,
+  tseslint.configs.strict,
+  tseslint.configs.stylistic,
+  react.configs.flat.recommended,
+  react.configs.flat["jsx-runtime"],
   {
-    files: ["**/src/**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: {
+      ...react.configs.flat.recommended.languageOptions,
+      globals: {
+        ...globals.serviceworker,
+        ...globals.browser,
+      },
+    },
+    settings: { react: { version: "detect" } },
+  },
+  reactDom.configs.recommended,
+  reactHooks.configs.flat["recommended-latest"],
+  {
+    basePath: "src",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     extends: [
-      js.configs.recommended,
       tseslint.configs.strictTypeChecked,
       tseslint.configs.stylisticTypeChecked,
-      reactHooks.configs.flat["recommended-latest"],
     ],
     languageOptions: {
-      ...languageOptions,
       parserOptions: {
         projectService: true,
         tsconfigDirName: import.meta.dirname,
@@ -54,40 +65,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["**/*.{jsx,mdx,tsx}"],
-    extends: [
-      react.configs.flat.recommended,
-      react.configs.flat["jsx-runtime"],
-    ],
-    languageOptions: {
-      globals: {
-        ...globals.serviceworker,
-        ...globals.browser,
-      },
-      parserOptions: {
-        projectService: true,
-        tsconfigDirName: import.meta.dirname,
-      },
-    },
-    rules: {
-      "react/function-component-definition": [
-        "error",
-        {
-          namedComponents: "arrow-function",
-          unnamedComponents: "arrow-function",
-        },
-      ],
-    },
-    settings: { react: { version: "detect" } },
-  },
-  {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs.flat["recommended-latest"],
-    ],
-    languageOptions,
     rules: {
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [
@@ -128,12 +106,16 @@ export default defineConfig([
     },
   },
   {
-    // Configure.mdx
-    files: ["**/*.mdx"],
-    extends: [react.configs.flat["jsx-runtime"]],
+    plugins: {
+      "tailwind-canonical-classes": tailwindCanonicalClasses,
+    },
     rules: {
-      "react/jsx-uses-vars": "error",
-      "tailwindcss/no-custom-classname": "off",
+      "tailwind-canonical-classes/tailwind-canonical-classes": [
+        "warn",
+        {
+          cssPath: "./src/styles/globals.css",
+        },
+      ],
     },
   },
   mdx.flat,
