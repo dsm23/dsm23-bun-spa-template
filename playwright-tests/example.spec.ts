@@ -12,7 +12,7 @@ test("has heading", async ({ page }) => {
 
   await expect(
     page.getByRole("heading", {
-      name: "Delete this",
+      name: "Bun spa Enterprise Boilerplate",
     }),
   ).toBeVisible();
 });
