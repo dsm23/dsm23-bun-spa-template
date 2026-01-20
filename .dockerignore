@@ -2,6 +2,17 @@
 !public/
 !nginx/
 !src/
+
+src/**/__tests__
+src/**/test.[jt]s
+src/**/test.[jt]sx
+src/**/spec.[jt]s
+src/**/spec.[jt]sx
+src/**/*.test.[jt]s
+src/**/*.test.[jt]sx
+src/**/*.spec.[jt]s
+src/**/*.spec.[jt]sx
+
 !build.ts
 !bun.lock
 !bunfig.toml
