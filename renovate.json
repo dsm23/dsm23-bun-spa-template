@@ -22,9 +22,12 @@
     }
   ],
   "ignoreDeps": ["ghcr.io/dsm23/dsm23-bun-spa-template"],
-  "internalChecksFilter": "strict",
-  "minimumReleaseAge": "3 days",
   "packageRules": [
+    {
+      "matchDatasources": ["github-releases", "github-tags", "npm"],
+      "internalChecksFilter": "strict",
+      "minimumReleaseAge": "3 days"
+    },
     {
       "extends": ["packages:eslint"],
       "groupName": "eslint packages"
