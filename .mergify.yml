@@ -39,7 +39,8 @@ pull_request_rules:
 
   - name: Automatically merge when GitHub Actions jobs succeed
     conditions:
-      - author != renovate[bot]
+      # - author != renovate[bot]
+      - "#approved-reviews-by>=1"
       - and: *common_checks
     actions:
       merge:
