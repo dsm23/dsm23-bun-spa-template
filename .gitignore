@@ -29,7 +29,6 @@ lefthook-local.yml
 .eslintcache
 .eslintmdcache
 .stylelintcache
-.prettiercache
 .cache
 *.tsbuildinfo
 
