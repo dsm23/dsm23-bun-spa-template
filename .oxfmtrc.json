@@ -37,6 +37,7 @@
     ]
   },
   "sortTailwindcss": {
-    "functions": ["clsx", "cn", "cva", "cx"]
+    "functions": ["clsx", "cn", "cva", "cx"],
+    "stylesheet": "./src/styles/globals.css"
   }
 }
