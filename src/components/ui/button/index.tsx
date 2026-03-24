@@ -57,4 +57,4 @@ const Button: FunctionComponent<Props> = ({
   );
 };
 
-export { Button, buttonVariants };
+export { Button };
