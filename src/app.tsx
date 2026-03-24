@@ -42,7 +42,7 @@ const LP_GRID_ITEMS = [
     ),
   },
   {
-    title: "ESlint & Oxfmt",
+    title: "Oxlint & Oxfmt",
     description: "For clean, consistent, and error-free code.",
     icon: (
       <svg
@@ -435,61 +435,59 @@ const LP_GRID_ITEMS = [
 ];
 
 const App = () => (
-  <>
-    <main>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto grid max-w-(--breakpoint-xl) px-4 py-8 text-center lg:py-16">
-          <div className="mx-auto place-self-center">
-            <h1 className="mb-4 max-w-2xl text-4xl leading-none font-extrabold tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-              Bun spa Enterprise Boilerplate
-            </h1>
-            <p className="mb-6 max-w-2xl font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl dark:text-gray-400">
-              Jumpstart your enterprise project with our feature-packed,
-              high-performance Bun boilerplate! Experience rapid UI development,
-              AI-powered code reviews, and an extensive suite of tools for a
-              smooth and enjoyable development process.
-            </p>
+  <main>
+    <section className="bg-white dark:bg-gray-900">
+      <div className="mx-auto grid max-w-(--breakpoint-xl) px-4 py-8 text-center lg:py-16">
+        <div className="mx-auto place-self-center">
+          <h1 className="mb-4 max-w-2xl text-4xl leading-none font-extrabold tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+            Bun spa Enterprise Boilerplate
+          </h1>
+          <p className="mb-6 max-w-2xl font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl dark:text-gray-400">
+            Jumpstart your enterprise project with our feature-packed,
+            high-performance Bun boilerplate! Experience rapid UI development,
+            AI-powered code reviews, and an extensive suite of tools for a
+            smooth and enjoyable development process.
+          </p>
 
-            <Button asChild>
-              <a
-                href="https://github.com/dsm23/dsm23-bun-spa-template"
-                className="mr-3"
-              >
-                Get started
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://vercel.com/new/git/external?repository-url=https://github.com/dsm23/dsm23-bun-spa-template/">
-                Deploy Now
-              </a>
-            </Button>
-          </div>
+          <Button asChild>
+            <a
+              href="https://github.com/dsm23/dsm23-bun-spa-template"
+              className="mr-3"
+            >
+              Get started
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href="https://vercel.com/new/git/external?repository-url=https://github.com/dsm23/dsm23-bun-spa-template/">
+              Deploy Now
+            </a>
+          </Button>
         </div>
-      </section>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-(--breakpoint-xl) px-4 py-8 sm:py-16 lg:px-6">
-          <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
-            {LP_GRID_ITEMS.map((singleItem) => (
-              <div
-                key={singleItem.title}
-                className="flex flex-col items-center justify-center text-center"
-              >
-                <div className="mb-4 flex size-10 items-center justify-center rounded-full p-1.5 text-blue-700 lg:size-12">
-                  {singleItem.icon}
-                </div>
-                <h2 className="mb-2 text-xl font-bold dark:text-white">
-                  {singleItem.title}
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400">
-                  {singleItem.description}
-                </p>
+      </div>
+    </section>
+    <section className="bg-white dark:bg-gray-900">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-4 py-8 sm:py-16 lg:px-6">
+        <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
+          {LP_GRID_ITEMS.map((singleItem) => (
+            <div
+              key={singleItem.title}
+              className="flex flex-col items-center justify-center text-center"
+            >
+              <div className="mb-4 flex size-10 items-center justify-center rounded-full p-1.5 text-blue-700 lg:size-12">
+                {singleItem.icon}
               </div>
-            ))}
-          </div>
+              <h2 className="mb-2 text-xl font-bold dark:text-white">
+                {singleItem.title}
+              </h2>
+              <p className="text-gray-500 dark:text-gray-400">
+                {singleItem.description}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
-    </main>
-  </>
+      </div>
+    </section>
+  </main>
 );
 
 export default App;
