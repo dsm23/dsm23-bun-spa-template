@@ -1,4 +1,4 @@
-import { Button } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
 
 const LP_GRID_ITEMS = [
   {
@@ -267,7 +267,7 @@ const LP_GRID_ITEMS = [
     ),
   },
   {
-    title: "Radix UI",
+    title: "Base UI",
     description: "Headless UI components for endless customization.",
     icon: (
       <svg
@@ -449,19 +449,19 @@ const App = () => (
             smooth and enjoyable development process.
           </p>
 
-          <Button asChild>
-            <a
-              href="https://github.com/dsm23/dsm23-bun-spa-template"
-              className="mr-3"
-            >
-              Get started
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="https://vercel.com/new/git/external?repository-url=https://github.com/dsm23/dsm23-bun-spa-template/">
-              Deploy Now
-            </a>
-          </Button>
+          <a
+            href="https://github.com/dsm23/dsm23-bun-spa-template"
+            className={buttonVariants({ className: "mr-3" })}
+          >
+            Get started
+          </a>
+
+          <a
+            href="https://vercel.com/new/git/external?repository-url=https://github.com/dsm23/dsm23-bun-spa-template/"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Deploy Now
+          </a>
         </div>
       </div>
     </section>
