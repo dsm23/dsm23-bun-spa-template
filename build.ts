@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 import plugin from "bun-plugin-tailwind";
-import { existsSync } from "fs";
-import { rm } from "fs/promises";
-import path from "path";
+import { existsSync } from "node:fs";
+import { rm } from "node:fs/promises";
+import path from "node:path";
 
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
   console.info(`
@@ -86,7 +86,7 @@ function parseArgs(): Partial<Bun.BuildConfig> {
 
     if (key.includes(".")) {
       const [parentKey, childKey] = key.split(".") as [string, string];
-      config[parentKey] = config[parentKey] || {};
+      config[parentKey] = config[parentKey] ?? {};
       config[parentKey][childKey] = parseValue(value);
     } else {
       config[key] = parseValue(value);
@@ -112,7 +112,7 @@ const formatFileSize = (bytes: number): string => {
 console.info("\n🚀 Starting build process...\n");
 
 const cliConfig = parseArgs();
-const outdir = cliConfig.outdir || path.join(process.cwd(), "dist");
+const outdir = cliConfig.outdir ?? path.join(process.cwd(), "dist");
 
 if (existsSync(outdir)) {
   console.info(`🗑️ Cleaning previous build at ${outdir}`);
