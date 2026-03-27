@@ -1,4 +1,5 @@
 import { buttonVariants } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 
 const LP_GRID_ITEMS = [
   {
@@ -451,14 +452,14 @@ const App = () => (
 
           <a
             href="https://github.com/dsm23/dsm23-bun-spa-template"
-            className={buttonVariants({ className: "mr-3" })}
+            className={cn(buttonVariants({ className: "mr-3" }))}
           >
             Get started
           </a>
 
           <a
             href="https://vercel.com/new/git/external?repository-url=https://github.com/dsm23/dsm23-bun-spa-template/"
-            className={buttonVariants({ variant: "outline" })}
+            className={cn(buttonVariants({ variant: "outline" }))}
           >
             Deploy Now
           </a>
