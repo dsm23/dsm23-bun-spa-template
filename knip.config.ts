@@ -3,10 +3,7 @@ import type { KnipConfig } from "knip";
 const config: KnipConfig = {
   tags: ["-lintignore"],
   entry: ["src/**/*.d.ts"],
-  ignoreDependencies: [
-    "eslint-plugin-react-dom",
-    "eslint-plugin-tailwind-canonical-classes",
-  ],
+  ignoreDependencies: ["eslint-plugin-tailwind-canonical-classes"],
   bun: {
     config: ["bunfig.toml"],
     entry: ["src/frontend.tsx"],
