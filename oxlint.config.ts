@@ -10,7 +10,7 @@ export default defineConfig({
     "typescript",
     "unicorn",
   ],
-  jsPlugins: ["eslint-plugin-tailwind-canonical-classes"],
+  jsPlugins: ["eslint-plugin-better-tailwindcss"],
   categories: {
     correctness: "warn",
     suspicious: "warn",
@@ -78,6 +78,16 @@ export default defineConfig({
         ],
       },
     ],
+    "better-tailwindcss/enforce-canonical-classes": "warn",
+    "better-tailwindcss/enforce-consistent-class-order": "warn",
+    "better-tailwindcss/enforce-consistent-important-position": "warn",
+    "better-tailwindcss/enforce-consistent-variable-syntax": "warn",
+    "better-tailwindcss/enforce-shorthand-classes": "warn",
+    "better-tailwindcss/no-conflicting-classes": "warn",
+    "better-tailwindcss/no-deprecated-classes": "warn",
+    "better-tailwindcss/no-duplicate-classes": "warn",
+    "better-tailwindcss/no-unnecessary-whitespace": "warn",
+    "better-tailwindcss/no-unknown-classes": "warn",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/anchor-has-content": "off",
     "oxc/no-async-await": "off",
@@ -89,12 +99,6 @@ export default defineConfig({
     "react/no-multi-comp": "off",
     "react/only-export-components": "off",
     "react/react-in-jsx-scope": "off",
-    "tailwind-canonical-classes/tailwind-canonical-classes": [
-      "warn",
-      {
-        cssPath: "./src/styles/globals.css",
-      },
-    ],
     "typescript/consistent-type-imports": [
       "warn",
       {
@@ -116,5 +120,10 @@ export default defineConfig({
         ignore: "bun-env.d.ts",
       },
     ],
+  },
+  settings: {
+    "better-tailwindcss": {
+      entryPoint: "./src/styles/globals.css",
+    },
   },
 });
