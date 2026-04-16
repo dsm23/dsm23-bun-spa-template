@@ -33,7 +33,7 @@
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@commitlint/types": "20.5.0",
-    "@happy-dom/global-registrator": "20.8.9",
+    "@happy-dom/global-registrator": "20.9.0",
     "@playwright/test": "1.59.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
