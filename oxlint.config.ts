@@ -94,6 +94,7 @@ export default defineConfig({
     "oxc/no-optional-chaining": "off",
     "oxc/no-rest-spread-properties": "off",
     "react/button-has-type": "off",
+    "react/forbid-component-props": "off",
     // TODO: remove when it supports tsx
     "react/jsx-filename-extension": "off",
     "react/no-multi-comp": "off",
