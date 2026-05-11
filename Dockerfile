@@ -2,7 +2,7 @@
 
 # Stage 1: Base image for dependencies and build
 FROM oven/bun:1.3.13-slim@sha256:7e8ed3961db1cdedf17d516dda87948cfedbd294f53bf16462e5b57ed3fff0f1 AS base
-FROM dhi.io/nginx:1.30.0-alpine3.23@sha256:447db2d0628b7680558b4f303802ccabfacdc6d41fb96f98c9228c1f3fd5c4d0 AS hardened
+FROM dhi.io/nginx:1.30.0-alpine3.23@sha256:8f238cd9e7b9b5e1bc578c3a612915a18abe5aed71962583465208840f0bec3d AS hardened
 
 # Install dependencies only when needed
 FROM base AS deps
