@@ -21,7 +21,6 @@
       "password": "{{ secrets.MEND_DOCKER_HUB_PASSWORD }}"
     }
   ],
-  "ignoreDeps": ["ghcr.io/dsm23/dsm23-bun-spa-template"],
   "packageRules": [
     {
       "description": "Apply minimum release age to all relevant datasources with timestamps",
@@ -64,8 +63,5 @@
     }
   ],
   "rebaseWhen": "conflicted",
-  "patch": {
-    "rebaseWhen": "behind-base-branch"
-  },
   "osvVulnerabilityAlerts": true
 }
