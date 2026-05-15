@@ -45,7 +45,7 @@
     "@types/react-dom": "19.2.3",
     "dotenv": "17.4.2",
     "eslint-plugin-better-tailwindcss": "4.5.0",
-    "fast-check": "4.7.0",
+    "fast-check": "4.8.0",
     "knip": "6.12.2",
     "lefthook": "2.1.6",
     "npm-run-all2": "8.0.4",
