@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:2780b5c3bab67f1f76c781860de469442999ed1a0d7992a5efdf2cffc0e3d769
 
 # Stage 1: Base image for dependencies and build
-FROM oven/bun:1.3.13-slim@sha256:7e8ed3961db1cdedf17d516dda87948cfedbd294f53bf16462e5b57ed3fff0f1 AS base
+FROM oven/bun:1.3.14-slim@sha256:d56a2534ffd262e92c12fd3249d3924d296d97086da773f821d7d0477435ea04 AS base
 FROM dhi.io/nginx:1.30.0-alpine3.23@sha256:8f238cd9e7b9b5e1bc578c3a612915a18abe5aed71962583465208840f0bec3d AS hardened
 
 # Install dependencies only when needed
