@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
-    "@commitlint/cli": "21.0.0",
-    "@commitlint/config-conventional": "21.0.0",
-    "@commitlint/types": "21.0.0",
+    "@commitlint/cli": "21.0.1",
+    "@commitlint/config-conventional": "21.0.1",
+    "@commitlint/types": "21.0.1",
     "@happy-dom/global-registrator": "20.9.0",
     "@playwright/test": "1.59.1",
     "@testing-library/dom": "10.4.1",
