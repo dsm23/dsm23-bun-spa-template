@@ -95,8 +95,7 @@ export default defineConfig({
     "oxc/no-rest-spread-properties": "off",
     "react/button-has-type": "off",
     "react/forbid-component-props": "off",
-    // TODO: remove when it supports tsx
-    "react/jsx-filename-extension": "off",
+    "react/jsx-filename-extension": ["warn", { extensions: ["jsx", "tsx"] }],
     "react/no-multi-comp": "off",
     "react/only-export-components": "off",
     "react/react-in-jsx-scope": "off",
@@ -122,6 +121,19 @@ export default defineConfig({
       },
     ],
   },
+  overrides: [
+    {
+      files: [
+        "**/*.{spec,test}.{ts,tsx,js,jsx}",
+        "**/{spec,test}.{ts,tsx,js,jsx}",
+        "**/__tests__/**/*",
+      ],
+      rules: {
+        "jsx-a11y/control-has-associated-label": "off",
+        "unicorn/consistent-function-scoping": "off",
+      },
+    },
+  ],
   settings: {
     "better-tailwindcss": {
       entryPoint: "./src/styles/globals.css",
