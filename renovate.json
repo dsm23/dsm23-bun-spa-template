@@ -41,25 +41,14 @@
       "minimumReleaseAgeBehaviour": "timestamp-optional"
     },
     {
-      "extends": ["packages:react"],
-      "groupName": "react packages"
-    },
-    {
-      "extends": ["packages:stylelint"],
-      "groupName": "stylelint packages"
-    },
-    {
       "groupName": "playwright monorepo",
+      "matchUpdateTypes": ["major", "minor"],
       "matchPackageNames": [
         "playwright",
         "@playwright/test",
         "mcr.microsoft.com/playwright",
         "gwennlbh/playwright-bun"
       ]
-    },
-    {
-      "groupName": "bun monorepo",
-      "matchPackageNames": ["bun", "@types/bun", "oven/bun"]
     }
   ],
   "rebaseWhen": "conflicted",
