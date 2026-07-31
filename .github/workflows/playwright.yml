@@ -47,7 +47,7 @@ jobs:
       (${{ matrix.shardIndex[0] }}, ${{ matrix.shardTotal }})
 
     container:
-      image: gwennlbh/playwright-bun:v1.61.0@sha256:37dbfd3bb8a099b85b064e5b62f98690af62548c3114f8f796ffc99f517abc52
+      image: gwennlbh/playwright-bun:v1.62.0@sha256:7f5c7294f4e03a38d9eb714d1ba522a93122b0f981007c2f52bf8cb53684ab66
       options: --user 1001
     steps:
       - name: Harden Runner
